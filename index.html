@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <title>Profil Mahasiswa — Jonnyficky Felyang</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #102a43;
+      --muted: #536b84;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      isolation: isolate;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #e8f5ff 0%, #f8f5ff 48%, #e5f8f3 100%);
+      color: var(--navy);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: .68;
+      pointer-events: none;
+    }
+    body::before { top: -120px; left: -100px; background: radial-gradient(circle at 35% 35%, #86d5ff, #83aaff 48%, #83aaff00 72%); }
+    body::after { right: -100px; bottom: -150px; background: radial-gradient(circle at 40% 40%, #8debd1, #75c9eb 48%, #75c9eb00 72%); }
+    .card {
+      width: min(100%, 760px);
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(145deg, #ffffffb8, #ffffff70 48%, #faffff8a);
+      border: 1px solid #ffffffd9;
+      border-radius: 26px;
+      box-shadow: 0 28px 80px #35577922, inset 0 1px 0 #ffffff;
+      backdrop-filter: blur(28px) saturate(155%);
+      -webkit-backdrop-filter: blur(28px) saturate(155%);
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #fff, #ffffff70, transparent);
+      pointer-events: none;
+    }
+    .banner {
+      position: relative;
+      min-height: 225px;
+      padding: 30px 38px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      color: white;
+      background: linear-gradient(125deg, #153c59e8 0%, #246d99d9 55%, #3aa99bbf 100%);
+      border-bottom: 1px solid #ffffff55;
+      isolation: isolate;
+    }
+    .banner::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: radial-gradient(ellipse at 82% 8%, #ffffff55, transparent 42%), linear-gradient(160deg, #ffffff12, transparent 60%);
+    }
+    .banner::after {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      right: 38px;
+      bottom: -152px;
+      border: 1px solid #ffffff50;
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px #ffffff12, 0 0 0 50px #ffffff0a, inset 0 0 45px #ffffff12;
+    }
+    .eyebrow { margin: 0 0 9px; color: #d9eeff; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .banner h1 { max-width: 500px; margin: 0; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.12; }
+    .monogram {
+      z-index: 1;
+      flex: 0 0 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #ffffff85;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #ffffff40, #ffffff12);
+      box-shadow: inset 0 1px 0 #ffffff9c, 0 8px 24px #102a4320;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+    .content { padding: 34px 38px 38px; }
+    .intro { margin: 0 0 25px; color: var(--muted); line-height: 1.7; }
+    .details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .item { padding: 17px 18px; border: 1px solid #ffffffc9; border-radius: 17px; background: linear-gradient(145deg, #ffffffa8, #ffffff56); box-shadow: inset 0 1px 0 #fff, 0 8px 22px #3557790b; }
+    .label { display: block; margin-bottom: 8px; color: var(--muted); font-size: .73rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .value { font-size: 1rem; font-weight: 650; line-height: 1.45; overflow-wrap: anywhere; }
+    .wide { grid-column: 1 / -1; }
+    .footer { display: flex; align-items: center; gap: 10px; margin-top: 24px; color: var(--muted); font-size: .85rem; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: #3aa6a0; box-shadow: 0 0 0 4px #3aa6a01c; }
+    @media (max-width: 560px) {
+      body { padding: 16px; }
+      .banner { min-height: 180px; padding: 26px 23px; }
+      .monogram { flex-basis: 52px; height: 52px; border-radius: 16px; }
+      .content { padding: 26px 23px 28px; }
+      .details { grid-template-columns: 1fr; }
+      .wide { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="banner">
+      <div>
+        <p class="eyebrow">Profil Mahasiswa</p>
+        <h1>Jonnyficky Felyang</h1>
+      </div>
+      <div class="monogram" aria-hidden="true">JF</div>
+    </header>
+    <section class="content" aria-label="Informasi mahasiswa">
+      <p class="intro">Halaman profil mahasiswa Program Studi Sistem Informasi, UPI YPTK Padang.</p>
+      <div class="details">
+        <div class="item">
+          <span class="label">Nama</span>
+          <div class="value">Jonnyficky Felyang</div>
+        </div>
+        <div class="item">
+          <span class="label">Nomor BP</span>
+          <div class="value">23101152610508</div>
+        </div>
+        <div class="item">
+          <span class="label">Program Studi</span>
+          <div class="value">Sistem Informasi</div>
+        </div>
+        <div class="item">
+          <span class="label">Perguruan Tinggi</span>
+          <div class="value">UPI YPTK Padang</div>
+        </div>
+      </div>
+      <div class="footer"><span class="dot" aria-hidden="true"></span>Informasi mahasiswa</div>
+    </section>
+  </main>
+</body>
+</html>
